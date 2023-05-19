@@ -1,10 +1,20 @@
-export const cartReducer = (state=0,action)=>{
+const initialState = {
+    cartVal:0,
+    cartItem:[]
+}
+export const cartReducer = (state=initialState,action)=>{
     switch(action.type){
-        case 'ADD':
-            return state+1
+        case 'Add':
+            return (state={
+                cartVal:state.cartVal+1,
+                cartItem:action.payload
+            })
         case 'REMOVE':
             return state-1
         default:
-            return state
+            return (state={
+                cartVal:0,
+                cartItem:{}
+            })
     }
 }

@@ -1,32 +1,26 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Home from './components/Home';
-import NotFound from './components/NotFound';
-import Login from './components/Login'
-import Register from './components/Register'
-import ProductCard from './components/ProductCard'
-import Cart from './components/Cart'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+import Register from './pages/Register'
+import Products from './pages/Products';
+import Login from './pages/Login'
+import NotFound from './pages/NotFound'
+import About from './pages/About'
 
 function App() {
   return (
     <div>
       <Router>
-        <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/cart' element={<Cart/>} />
-          <Route path='/products' element={<ProductCard/>} />
+          <Route path='/products' element={<Products/>} />
+          <Route path='/register' element={<Register/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/login' element={<Login/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
-        <Footer/>
       </Router>
-      {/* <Router>
-        <Routes>
-          <Route path='/register' element={<Register/>} />
-          <Route path='/login' element={<Login/>} />
-        </Routes>
-      </Router> */}
       
     </div>
   );
